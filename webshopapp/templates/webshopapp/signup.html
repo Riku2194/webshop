@@ -1,0 +1,29 @@
+{% extends "webshopapp/base.html" %}
+ 
+{% block title %}新規会員登録{% endblock %}
+ 
+{% block content %}
+
+    <main>
+        <div class="login-form-container">
+            <h1>新規会員登録</h1>
+            <p style="text-align: center; margin-top: -15px; margin-bottom: 30px; font-size: 0.9em; color: #6c757d;">
+                ご入力いただいたメールアドレスに、本登録用のURLをお送りします。
+            </p>
+            <form>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" placeholder="例: user@example.com" required>
+                </div>
+                <button type="submit" class="login-btn">仮登録メールを送信</button>
+            </form>
+            <div class="register-link">
+                すでにアカウントをお持ちですか？ <a href="{% url 'login' %}">ログイン</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+{% endblock %}

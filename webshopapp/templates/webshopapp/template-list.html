@@ -1,0 +1,55 @@
+{% extends "webshopapp/base.html" %}
+ 
+{% block title %}商品一覧{% endblock %}
+ 
+{% block content %}
+
+    <div class="container main-content">
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <h3>カテゴリ</h3>
+            <ul>
+                <li><a href="#" data-category="all" class="active">すべて</a></li>
+                <li><a href="#" data-category="opening">オープニング</a></li>
+                <li><a href="#" data-category="profile">プロフィール</a></li>
+                <li><a href="#" data-category="end-roll">エンドロール</a></li>
+            </ul>
+        </aside>
+
+        <!-- 商品リスト -->
+        <main class="product-list">
+            <div class="toolbar">
+                <div class="result-count">全 25 件中 1-9 件を表示</div>
+                <select class="sort-select">
+                    <option>新着順</option>
+                    <option>人気順</option>
+                    <option>価格が安い順</option>
+                    <option>価格が高い順</option>
+                </select>
+            </div>
+
+            <div class="product-grid">
+                <!-- テンプレートカードが9つ並ぶ -->
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名A</div><div class="price">¥5,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名B</div><div class="price">¥5,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名C</div><div class="price">¥8,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名D</div><div class="price">¥5,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名E</div><div class="price">¥10,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名F</div><div class="price">¥5,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名G</div><div class="price">¥8,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名H</div><div class="price">¥5,000</div></div></div>
+                <div class="card"><div class="placeholder">商品画像</div><div class="info"><div class="name">テンプレート名I</div><div class="price">¥10,000</div></div></div>
+            </div>
+
+            <nav class="pagination">
+                <a href="#" class="current">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">次へ &raquo;</a>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>
+
+{% endblock %}
