@@ -1,0 +1,482 @@
+/* --- 基本設定 --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #495057;
+        }
+        section {
+            padding: 60px 0px;
+        }
+
+/* --- ヘッダー --- */
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { 
+            font-size: 1.5em; 
+            font-weight: bold;
+            color: #343a40; 
+            text-decoration: none;}
+        
+/* 訪問済みリンクの色も同じ色に指定 */
+        .logo:visited {
+            color: #343a40;
+        }
+
+/* マウスが乗ったときも色と下線が変わらないように指定 */
+        .logo:hover {
+            color: #343a40;
+            text-decoration: none;
+        }
+
+        .nav a { margin-left: 25px; text-decoration: none; color: #495057; font-weight: 500; }
+
+/* --- ボタンのスタイル --- */
+
+/* ボタンの共通スタイル */
+        .btn-nav {
+            padding: 8px 16px;          /* ボタンの内側の余白（上下8px, 左右16px） */
+            border: 1px solid transparent; /* 1pxの透明な線を設定（後で色を指定） */
+            border-radius: 5px;         /* 角を5pxの半径で丸める */
+            text-decoration: none;      /* リンクの下線を消す */
+            transition: all 0.2s ease;  /* ホバー時の変化を滑らかにする */
+        }
+
+/* ログインボタン（枠線のみのスタイル） */
+        .btn-nav-login {
+            color: #495057;              /* 文字色 */
+            border-color: #ced4da;      /* 枠線の色 */
+            background-color: #fff;     /* 背景色（白） */
+        }
+
+/* ログインボタンをホバーした時のスタイル */
+        .btn-nav-login:hover {
+            background-color: #f8f9fa;  /* 背景を少しだけグレーに */
+        }
+
+/* 会員登録ボタン（背景色ありのスタイル） */
+        .btn-nav-signup {
+            color: #fff;                  /* 文字色（白） */
+            background-color: #a7ede5;   /* 背景色（青系の色） */
+            border-color: #a7ede5;       /* 枠線の色（背景色と同じ）*/
+        }
+
+/* 会員登録ボタンをホバーした時のスタイル */
+        .btn-nav-signup:hover {
+            background-color: #6cb0ba;   /* 背景を少し濃い青に */
+            border-color: #6cb0ba;
+        }
+/* --- メインビジュアル --- */
+        .hero {
+            background-color: #e9ecef;
+            text-align: center;
+            padding:75px 0;
+        }
+        .hero h1 { font-size: 3em; margin: 0 0 20px; }
+        .hero .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero .cta-button:hover { background-color: #0056b3; }   
+
+/* --- 商品・カテゴリセクション --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden; /* 角丸の外に要素がはみ出ないようにする */
+            display: flex;
+            flex-direction: column; /* 画像と情報を縦に並べる */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card .placeholder { height: 180px; background-color: #ced4da; display: flex; align-items: center; justify-content: center; color: #6c757d; }
+        .card .info { padding: 20px; }
+        .card .name { font-weight: bold; margin: 0 0 10px; }
+        .card .price { color: #6c757d; }
+        .card:hover {
+             transform: translateY(-5px); /* ホバー時に少し浮き上がる */
+             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .category-card {
+            height: 150px;
+            background-color: #ced4da;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            background-blend-mode: multiply;
+            background-size: cover;
+            border-radius: 8px;
+        }
+        a.category-card {
+            text-decoration: none; /* 通常時の下線を確実に消す */
+        }
+
+/* ホバーした時も下線を表示しない */
+        a.category-card:hover {
+            text-decoration: none;
+        }
+        a.card {
+            text-decoration: none !important; /* ★ !important を追加 */
+            color: inherit;
+        }
+
+        a.card:hover {
+            text-decoration: none !important; /* ★ !important を追加 */
+            color: inherit;
+        }
+        .placeholder {
+/* 縦横比を1:1（正方形）に固定 */
+            aspect-ratio: 1 / 1; 
+/* 見た目を整えるためのスタイル */
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #adb5bd;
+            font-weight: 500;
+        }
+
+/* 商品情報（名前と価格）のエリア */
+        .info {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+/* 商品名 */
+        .name {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+/* 価格 */
+        .price {
+            color: #495057;
+        }
+
+
+/* --- 特徴セクション --- */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center;}
+        .feature .icon { font-size: 3em; margin-bottom: 15px; color: #007bff; }
+        .feature h3 { font-size: 1.2em; margin-bottom: 10px;}
+
+/* --- フッター --- */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        .footer a { color: #f8f9fa; margin: 0 15px; text-decoration: none; }
+
+        
+
+/* --- メインコンテンツエリア（商品一覧） --- */
+        .main-content { display: flex; gap: 30px; margin-top: 40px; }
+
+/* --- サイドバー (絞り込み) --- */
+        .sidebar { width: 240px; flex-shrink: 0; }
+        .sidebar h3 { font-size: 1.2em; margin-bottom: 20px; border-bottom: 2px solid #e9ecef; padding-bottom: 10px;}
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li a { display: block; padding: 10px 15px; text-decoration: none; color: #495057; border-radius: 5px; }
+        .sidebar li a:hover, .sidebar li a.active { background-color: #e9ecef; color: #007bff; }
+
+/* --- 商品リスト --- */
+        .product-list { flex-grow: 1; }
+        .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .sort-select { padding: 8px 12px; border: 1px solid #ced4da; border-radius: 5px; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* PCでは3列で表示 */
+            gap: 30px; /* カード間の余白 */
+}
+        
+/* --- ページネーション --- */
+        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
+        .pagination a { padding: 10px 15px; text-decoration: none; color: #007bff; border: 1px solid #dee2e6; border-radius: 5px; }
+        .pagination a:hover, .pagination a.current { background-color: #007bff; color: white; border-color: #007bff;}
+
+/* --- ログインフォーム --- */
+        .login-form-container {
+            max-width: 450px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .login-form-container h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* paddingを含めてwidth 100%にする */
+        }
+        .forgot-password {
+            display: block;
+            text-align: right;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+        .login-btn {
+            display: block;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover { background-color: #0056b3; }
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        .register-link a, .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    
+/* --- 商品詳細レイアウト --- */
+        .product-detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+/* --- 左カラム：ビデオプレーヤー --- */
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            border-radius: 8px;
+        }
+
+/* --- 右カラム：商品情報と購入ボタン --- */
+        .product-info h1 { font-size: 2.2em; margin: 0 0 15px; }
+        .product-info .tags { margin-bottom: 15px; }
+        .product-info .tags a { background-color: #e9ecef; color: #6c757d; padding: 5px 10px; text-decoration: none; border-radius: 5px; font-size: 0.9em; margin-right: 5px;}
+        .product-info .rating-summary { margin-bottom: 20px; color: #fd7e14; }
+        .product-info .price { font-size: 2em; font-weight: bold; color: #dc3545; margin-bottom: 25px; }
+        .product-info .add-to-cart-btn {
+            display: block; width: 100%; background-color: #007bff; color: white; padding: 18px 30px; text-decoration: none; font-size: 1.2em; border-radius: 5px; text-align: center; border: none; cursor: pointer; transition: background-color 0.3s;
+        }
+        .product-info .add-to-cart-btn:hover { background-color: #0056b3; }
+        .product-info .specs { list-style: none; padding: 0; margin-top: 25px; color: #6c757d; }
+        .product-info .specs li { padding: 5px 0; border-bottom: 1px solid #f1f3f5; }
+
+/* --- 商品説明 & レビューセクション --- */
+        .product-long-description { background-color: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; }
+        .reviews-section .review-item {
+            border-bottom: 1px solid #e9ecef;
+            padding: 25px 0;
+        }
+        .reviews-section .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .reviews-section .review-author { font-weight: bold; }
+        .reviews-section .review-rating { color: #fd7e14; }
+        .reviews-section .review-comment { color: #495057; }
+
+
+/* ===============================================
+   ハンバーガーメニューの基本スタイル
+   =============================================== */
+        .hamburger-menu {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 24px;
+        position: relative;
+        z-index: 101;
+        }
+
+        .hamburger-menu .line {
+        display: block; width: 100%; height: 3px; background-color: #343a40;
+        border-radius: 3px; position: absolute; transition: all 0.3s ease;
+        }
+        .hamburger-menu .line:nth-child(1) { top: 0; }
+        .hamburger-menu .line:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .hamburger-menu .line:nth-child(3) { bottom: 0; }
+
+
+/* ===============================================
+   レスポンシブ設定 (画面幅が835px以下の場合)
+   =============================================== */
+@media (max-width: 835px) {
+
+/* --- ▼▼▼ ヘッダーのコンテナを、メニューの配置基準にする ▼▼▼ --- */
+        .header .container {
+            position: relative; /* これが基準点になる */
+        }
+
+/* --- PC用のナビゲーションを隠す --- */
+        .nav {
+            display: none;
+        }
+    
+/* --- ハンバーガーメニューを表示 --- */
+        .hamburger-menu {
+            display: block;
+        }
+
+/* --- ▼▼▼ ドロップダウンメニューのスタイル（ここから） ▼▼▼ --- */
+
+/* is-activeじゃない（隠れている）時のスタイル */
+        .nav {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(0);
+        }
+        
+        .nav.is-active {
+            display: flex;          /* Flexboxを有効にする */
+            flex-direction: column; /* 縦並びにする */
+            
+            position: absolute;
+            top: 100%;
+            right: 0;
+            
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 10px 0; /* 上下の余白 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        
+/* ふわっと表示されるアニメーション */
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            }
+        
+/* メニュー内の各リンクのスタイル */
+        .nav.is-active a {
+            display: block;
+            margin: 10px;
+            padding: 8px 20px; /* ★上下の余白を少し調整 */
+            color: #495057;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s ease; /* ホバー効果を滑らかに */
+        }
+    
+/* ログイン・会員登録ボタンには少し上のマージンを追加して区切りをつける */
+        .nav.is-active .btn-nav {
+            margin-top: 5px;
+        }
+    
+/* 最後の会員登録ボタンの下に線を入れて区切りを明確にする */
+        .nav.is-active .btn-nav-login {
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 13px;
+        }
+
+        .nav.is-active a:hover {
+            background-color: #f8f9fa;
+        }
+    
+/* --- ▲▲▲ ドロップダウンメニューのスタイル（ここまで） ▲▲▲ --- */
+
+
+/* --- ハンバーガーが×印に変わるアニメーション --- */
+        .hamburger-menu.is-active .line:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+        .hamburger-menu.is-active .line:nth-child(2) { opacity: 0; }
+        .hamburger-menu.is-active .line:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+
+/* (↓ここから下は、前回までのレイアウト調整) */
+        .container { padding: 0 15px; }
+        .header .container {
+            flex-direction: row; justify-content: space-between; align-items: center;
+        }
+        .hero { padding: 60px 0; }
+        .hero h1 { font-size: 1.7rem; }
+        .hero p { font-size: 0.9rem; }
+        .grid, .category-grid, .features-grid { grid-template-columns: 1fr; gap: 30px; }
+        section { padding: 45px 0; }
+        h2 { font-size: 1.5rem; margin-bottom: 30px; }
+        .footer .container { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+
+/* 商品グリッドを1列（縦並び）にする */
+        .product-grid {
+        grid-template-columns: 1fr;
+    }
+        
+}

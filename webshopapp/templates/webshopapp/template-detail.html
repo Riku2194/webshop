@@ -1,0 +1,63 @@
+{% extends "webshopapp/base.html" %}
+ 
+{% block title %}商品詳細{% endblock %}
+ 
+{% block content %}
+
+    <main class="container">
+        <div class="product-detail-layout">
+            <!-- 左カラム：ビデオ -->
+            <div class="video-player">
+                ▶ サンプル動画
+            </div>
+
+            <!-- 右カラム：情報 -->
+            <aside class="product-info">
+                <div class="tags">
+                    <a href="#">オープニング</a> <a href="#">人気</a>
+                </div>
+                <h1>クラシック・オープニングムービー</h1>
+                <div class="rating-summary">★★★★☆ (4.5) | 12件のレビュー</div>
+                <div class="price">¥5,000</div>
+                <button class="add-to-cart-btn">カートに入れる</button>
+                <ul class="specs">
+                    <li>対応ソフト: PowerPoint, Keynote, Canva</li>
+                    <li>画面比率: 16:9</li>
+                    <li>納品形式: 即時ダウンロード</li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- 詳細説明 -->
+        <section class="product-long-description">
+            <div class="container">
+                <h2>テンプレート詳細</h2>
+                <p>ここに、テンプレートのより詳細な説明文が入ります。ER図の`テンプレート`テーブルの`詳細説明`カラムのデータがここに表示されるイメージです。どのような特徴があるか、何が含まれているか、などを丁寧に解説します。</p>
+            </div>
+        </section>
+
+        <!-- レビュー -->
+        <section class="reviews-section">
+            <h2>カスタマーレビュー</h2>
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="review-author">佐藤 様</span>
+                    <span class="review-rating">★★★★★</span>
+                </div>
+                <p class="review-comment">とても簡単に素敵な動画が作れました！ゲストからも大好評でした。</p>
+            </div>
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="review-author">田中 様</span>
+                    <span class="review-rating">★★★★☆</span>
+                </div>
+                <p class="review-comment">写真の差し替えが少し難しかったですが、完成度には満足しています。</p>
+            </div>
+        </section>
+
+    </main>
+
+
+</body>
+</html>
+{% endblock %}

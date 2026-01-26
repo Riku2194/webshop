@@ -1,0 +1,63 @@
+{% extends "webshopapp/base.html" %}
+ 
+{% block title %}トップページ{% endblock %}
+ 
+{% block content %}
+<!-- メインビジュアル -->
+<section class="hero">
+<div class="container">
+<h1>最短で、最高の思い出を。</h1>
+<p>パワポ感覚で、プロ品質のムービーを自作しよう。</p>
+<a href="{% url 'template-list' %}" class="cta-button">テンプレートを探す →</a>
+</div>
+</section>
+ 
+<!-- 新着テンプレート -->
+<section>
+<div class="container">
+<h2>おすすめテンプレート</h2>
+<div class="grid">
+<a href="{% url 'template-detail' %}" class="card">
+<div class="placeholder">商品画像</div>
+<div class="info"><div class="name">テンプレート名A</div><div class="price">¥5,000</div></div>
+</a>
+<a href="{% url 'template-detail' %}" class="card">
+<div class="placeholder">商品画像</div>
+<div class="info"><div class="name">テンプレート名B</div><div class="price">¥5,000</div></div>
+</a>
+<a href="{% url 'template-detail' %}" class="card">
+<div class="placeholder">商品画像</div>
+<div class="info"><div class="name">テンプレート名C</div><div class="price">¥5,000</div></div>
+</a>
+<a href="{% url 'template-detail' %}" class="card">
+<div class="placeholder">商品画像</div>
+<div class="info"><div class="name">テンプレート名D</div><div class="price">¥5,000</div></div>
+</a>
+</div>
+</div>
+</section>
+ 
+<!-- カテゴリから探す -->
+<section>
+<div class="container">
+<h2>カテゴリから探す</h2>
+<div class="category-grid">
+<a href="{% url 'template-list' %}?category=opening" class="category-card" style="background-color:#4a5568;">オープニング</a>
+<a href="{% url 'template-list' %}?category=profile" class="category-card" style="background-color:#6c757d;">プロフィール</a>
+<a href="{% url 'template-list' %}?category=end-roll" class="category-card" style="background-color:#495057;">エンドロール</a>
+</div>
+</div>
+</section>
+ 
+<!-- 選ばれる理由 -->
+<section>
+<div class="container">
+<h2>選ばれる3つの理由</h2>
+<div class="features-grid">
+<div class="feature"><div class="icon">①</div><h3>簡単編集</h3><p>使い慣れたパワポ感覚で、写真と文字を入れ替えるだけ。専門知識は不要です。</p></div>
+<div class="feature"><div class="icon">②</div><h3>高品質</h3><p>パワポで編集したとは思えない品質で、完成度の高いムービーが完成します。</p></div>
+<div class="feature"><div class="icon">③</div><h3>安心ライセンス</h3><p>BGMや素材はすべて商用利用OK。ライセンスを気にせず、安心してご利用いただけます。</p></div>
+</div>
+</div>
+</section>
+{% endblock %}

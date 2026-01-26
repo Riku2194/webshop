@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Wedding Template Store{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'webshopapp/css/style.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+ 
+<body>
+<!-- ヘッダー -->
+<header class="header">
+<div class="container">
+<a href="{% url 'top' %}" class="logo">Wedding Template Store</a>
+ 
+      <button class="hamburger-menu" id="hamburger-menu">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</button>
+ 
+      <nav class="nav" id="nav-menu">
+<a href="{% url 'template-list' %}">テンプレート一覧</a>
+<a href="#">購入履歴</a>
+<a href="{% url 'login' %}" class="btn-nav btn-nav-login">ログイン</a>
+<a href="{% url 'signup' %}" class="btn-nav btn-nav-signup">会員登録</a>
+</nav>
+</div>
+</header>
+ 
+  <!-- ページ個別の中身 -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+ 
+  <!-- フッター -->
+<footer class="footer">
+<div class="container">
+<a href="#">利用規約</a>
+<a href="#">プライバシーポリシー</a>
+<a href="#">お問い合わせ</a>
+</div>
+</footer>
+ 
+  <script src="{% static 'webshopapp/js/script.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
