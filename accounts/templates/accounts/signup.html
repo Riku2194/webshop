@@ -1,0 +1,53 @@
+<!-- accounts/templates/accounts/signup.html-->
+ 
+{% extends "webshopapp/base.html" %}
+ 
+{% block title %}新規会員登録{% endblock %}
+ 
+{% block content %}
+<main>
+<div class="login-form-container">
+<h1>新規会員登録</h1>
+        {% if form.errors %}
+<div class="form-errors" style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 20px;">
+<p>入力内容に誤りがあります。各項目をご確認ください。</p>
+</div>
+        {% endif %}
+ 
+        <form method="post">
+            {% csrf_token %}
+ 
+            {# --- Email --- #}
+<div class="form-group">
+<label for="{{ form.email.id_for_label }}">メールアドレス</label>
+                {{ form.email }}
+</div>
+ 
+            {# --- Birthday --- #}
+<div class="form-group">
+<label for="{{ form.birthday.id_for_label }}">誕生日</label>
+                {{ form.birthday }}
+</div>
+ 
+ 
+            {# --- Password (1つ目：パスワード本体) --- #}
+<div class="form-group">
+<label for="{{ form.password.id_for_label }}">パスワード</label>
+                {{ form.password }}
+</div>
+ 
+            {# --- Password Confirmation (2つ目：確認用パスワード) --- #}
+<div class="form-group">
+<label for="{{ form.password2.id_for_label }}">パスワード（確認用）</label>
+                {{ form.password2 }}
+</div>
+ 
+            <button type="submit" class="login-btn">登録する</button>
+</form>
+ 
+        <div class="register-link">
+            すでにアカウントをお持ちですか？ <a href="{% url 'accounts:login' %}">ログイン</a>
+</div>
+</div>
+</main>
+{% endblock %}

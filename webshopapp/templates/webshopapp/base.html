@@ -21,11 +21,18 @@
 <span class="line"></span>
 </button>
  
-      <nav class="nav" id="nav-menu">
+<nav class="nav" id="nav-menu">
 <a href="{% url 'template-list' %}">テンプレート一覧</a>
-<a href="#">購入履歴</a>
-<a href="{% url 'login' %}" class="btn-nav btn-nav-login">ログイン</a>
-<a href="{% url 'signup' %}" class="btn-nav btn-nav-signup">会員登録</a>
+    {% if user.is_authenticated %}
+        {# ログインしている場合、「ログアウト」のみ（または、将来のマイページなど）を表示 #}
+        {# <a href="#">マイページ</a> #}
+ <a href="{% url 'accounts:logout' %}" class="btn-nav btn-nav-login">ログアウト</a>
+ 
+    {% else %}
+        {# ログインしていない場合、「ログイン」と「会員登録」を表示 #}
+<a href="{% url 'accounts:login' %}" class="btn-nav btn-nav-login">ログイン</a>
+<a href="{% url 'accounts:signup' %}" class="btn-nav btn-nav-signup">会員登録</a>
+    {% endif %}
 </nav>
 </div>
 </header>
