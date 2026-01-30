@@ -30,4 +30,5 @@ urlpatterns = [
     path('login/', views.LoginView.as_view(), name="login"),
     path('forgot-password/', views.ForgotPasswordView.as_view(), name="forgot-password"),
     path('payments/', include('payments.urls')),
+    path('orders/', include('orders.urls')),
 ]
